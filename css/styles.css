@@ -13,6 +13,7 @@
     --footerlogocol: #f4f4fd; /*цвет лого STUDIO в футере*/
     --bordercolor: #8E8F99;
     --sociallinkcolor: #31D0AA;
+    --modalbgc: #FCFCFC; /*backgroundcolor модального окна*/
 }
 body {
     font-family: 'Roboto', sans-serif;
@@ -103,12 +104,28 @@ header .container {
     text-decoration: none;
     display: block;
     padding: 24px 0px 24px 0px;
+    position: relative;
+}
+.menu.active::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 5px;
+    border-radius: 5px;
+    background-color: var(--buttonbasecolor);
+    position: absolute;
+    bottom: 0;      
+    left: 0;
+    transition: background-color 550ms cubic-bezier(0.4, 0, 0.2, 1) 5550ms;
+
 }
 .menu:hover {
     color :var(--textsecondcolor);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 .menu:focus {
     color: var(--buttonbasecolor);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 .list-contacts {
     list-style: none;
@@ -128,9 +145,11 @@ padding: 24px 0px 24px 0px;
 }
 .contacts:hover, .contacts:focus {
     color: var(--buttonbasecolor);
-}
-.contacts:hover, .contacts:focus {
-    fill: var(--buttonbasecolor);
+    /*transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0ms;*/
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 /* конец общего хедера */
 /* страница Studio */
@@ -184,12 +203,13 @@ padding: 24px 0px 24px 0px;
     0px 1px 1px rgba(46, 47, 66, 0.16), 
     0px 2px 1px rgba(46, 47, 66, 0.08);
     border-radius: 4px;
-
+    transition: background-color, box-shadow, 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 .button-order:focus {
     background-color: var(--buttonbackcol);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
+    transition: background-color, box-shadow, 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 .benefits {
     padding: 120px 0px 120px 0px;
@@ -350,10 +370,12 @@ padding: 24px 0px 24px 0px;
 .customer-item-link:hover .customer-icon, 
 .customer-item-link:focus .customer-icon {
     fill: var(--buttonbasecolor);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 .customer-item-link:hover, 
 .customer-item-link:focus {
     border-color: var(--buttonbasecolor);
+    transition: border-color, 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 .footer {
     background-color: var(--textbasecolor);
@@ -408,6 +430,7 @@ footer .logo{
 .f-sl-link:hover, .f-sl-link:focus {
     fill: currentColor;
     background-color: var(--sociallinkcolor);
+    transition: background-color, fill 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 /* конец общего футера */
 /* страница Portfolio */
@@ -442,6 +465,7 @@ footer .logo{
     0px 2px 1px rgba(0, 0, 0, 0.08), 
     0px 2px 2px rgba(0, 0, 0, 0.12);
     border-radius : 4px;
+    transition: background-color, color, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 .portfolio-list {
     display: flex;
@@ -451,11 +475,33 @@ footer .logo{
     column-gap: 24px;
     row-gap: 48px;
 }
-img {
-    display: block;
+.portfolio-link > img {
+    display: block;   
+}
+.portfolio-overlay-base {
+    position: relative;
+    overflow: hidden;
 }
 .portfolio-card {
     list-style: none;
+    /*position: relative;*/
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(101%);
+    transition: transform 500ms;
+    display: flex;
+    /*align-items: center;*/
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(77, 90, 229, 0.7);
+}
+.overlay-text {
+    padding: 40px 32px 0 32px;
+    color: #F4F4FD;
 }
 .portfolio-item {
     padding: 32px 0px 32px 16px;
@@ -469,21 +515,28 @@ img {
     0px 1px 1px rgba(46, 47, 66, 0.16), 
     0px 2px 1px rgba(46, 47, 66, 0.08);
     border-top: none;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 .portfolio-link:focus .portfolio-item {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 
     0px 1px 1px rgba(46, 47, 66, 0.16), 
     0px 2px 1px rgba(46, 47, 66, 0.08);
     border-top: none;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 .portfolio-link:hover, .portfolio-link:focus {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 
     0px 1px 1px rgba(46, 47, 66, 0.16), 
     0px 2px 1px rgba(46, 47, 66, 0.08); 
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.portfolio-link:hover .overlay{
+    transform: translateY(0);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 .portfolio-link {
     text-decoration: none;
-    display: block;
+    display: block;   
 }
 .portfolio-title {
     font-weight: 500;
@@ -495,4 +548,59 @@ img {
 .portfolio-text {
     margin-top: 8px;
     color: var(--textsecondcolor);
+}
+/*--------------------- Модальное окно ------------------------*/
+.backdrop {
+    position : fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: visibility 500ms, opacity 500ms;
+}
+.backdrop.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+} 
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 408px;
+    height: 576px; 
+    background: var(--modalbgc);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    animation: modal-x 2s linear 1;
+}
+.modal-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--footertextcol);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    cursor: pointer;
+}
+@keyframes modal-x {
+   0% {
+        opacity: 0;
+        transform: translate(100px, 100px);   
+   } 
+   50% {
+        opacity: 0.6;;
+   }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
 }
