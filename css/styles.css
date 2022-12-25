@@ -105,6 +105,10 @@ header .container {
     display: block;
     padding: 24px 0px 24px 0px;
     position: relative;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.menu.active {
+    color: var(--buttonbasecolor);
 }
 .menu.active::after {
     content: '';
@@ -116,16 +120,13 @@ header .container {
     position: absolute;
     bottom: 0;      
     left: 0;
-    transition: background-color 550ms cubic-bezier(0.4, 0, 0.2, 1) 5550ms;
-
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 .menu:hover {
     color :var(--textsecondcolor);
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 .menu:focus {
     color: var(--buttonbasecolor);
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 .list-contacts {
     list-style: none;
@@ -133,7 +134,6 @@ header .container {
     display: flex;
     padding: 0;
     margin: 0 0 0 auto;
-    /*margin-left: auto;*/
 }
 .contacts {
 line-height: 1.5;
@@ -142,14 +142,10 @@ text-decoration: none;
 color:var(--textsecondcolor);
 display : block;
 padding: 24px 0px 24px 0px;
+transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 .contacts:hover, .contacts:focus {
     color: var(--buttonbasecolor);
-    /*transition-property: color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-delay: 0ms;*/
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 /* конец общего хедера */
 /* страница Studio */
@@ -157,7 +153,6 @@ padding: 24px 0px 24px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
-   /* padding: 192px 318px 192px 318px;*/
 }
 .hero {
     max-width: 1440px;
@@ -196,6 +191,8 @@ padding: 24px 0px 24px 0px;
     margin-top: 48px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border: 2px solid var(--buttonbasecolor);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, 
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 .button-order:hover {
     background-color: var(--buttonbasecolor);
@@ -203,13 +200,11 @@ padding: 24px 0px 24px 0px;
     0px 1px 1px rgba(46, 47, 66, 0.16), 
     0px 2px 1px rgba(46, 47, 66, 0.08);
     border-radius: 4px;
-    transition: background-color, box-shadow, 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 .button-order:focus {
     background-color: var(--buttonbackcol);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
-    transition: background-color, box-shadow, 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 .benefits {
     padding: 120px 0px 120px 0px;
@@ -359,6 +354,7 @@ padding: 24px 0px 24px 0px;
     border: 1px solid var(--bordercolor);
     border-radius: 4px;
     align-items: center;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 .customer-icon {
     display: block;
@@ -366,16 +362,15 @@ padding: 24px 0px 24px 0px;
     align-content: center;
     margin: 0 auto;
     fill: var(--bordercolor);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 .customer-item-link:hover .customer-icon, 
 .customer-item-link:focus .customer-icon {
     fill: var(--buttonbasecolor);
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 .customer-item-link:hover, 
 .customer-item-link:focus {
     border-color: var(--buttonbasecolor);
-    transition: border-color, 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 .footer {
     background-color: var(--textbasecolor);
@@ -426,11 +421,11 @@ footer .logo{
     color : var(--fullwhitecolor);
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, fill 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 .f-sl-link:hover, .f-sl-link:focus {
     fill: currentColor;
     background-color: var(--sociallinkcolor);
-    transition: background-color, fill 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 /* конец общего футера */
 /* страница Portfolio */
@@ -457,6 +452,9 @@ footer .logo{
     border: 1px solid var(--footertextcol);
     padding: 8px 16px 8px 16px;
     background-color: var(--footerlogocol);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, 
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, 
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 .button-filter:hover, .button-filter:focus {
     background: var(--buttonbasecolor);
@@ -464,8 +462,7 @@ footer .logo{
     box-shadow : 0px 3px 1px rgba(0, 0, 0, 0.1), 
     0px 2px 1px rgba(0, 0, 0, 0.08), 
     0px 2px 2px rgba(0, 0, 0, 0.12);
-    border-radius : 4px;
-    transition: background-color, color, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius : 4px; 
 }
 .portfolio-list {
     display: flex;
@@ -475,7 +472,7 @@ footer .logo{
     column-gap: 24px;
     row-gap: 48px;
 }
-.portfolio-link > img {
+img {
     display: block;   
 }
 .portfolio-overlay-base {
@@ -484,24 +481,22 @@ footer .logo{
 }
 .portfolio-card {
     list-style: none;
-    /*position: relative;*/
 }
 .overlay {
     position: absolute;
     top: 0;
     left: 0;
-    transform: translateY(101%);
+    transform: translateY(100%);
     transition: transform 500ms;
     display: flex;
-    /*align-items: center;*/
     justify-content: center;
     width: 100%;
     height: 100%;
-    background-color: rgba(77, 90, 229, 0.7);
+    background-color: rgba(77, 90, 229, 1);
 }
 .overlay-text {
     padding: 40px 32px 0 32px;
-    color: #F4F4FD;
+    color: var(--footerlogocol);
 }
 .portfolio-item {
     padding: 32px 0px 32px 16px;
@@ -509,34 +504,33 @@ footer .logo{
     background-color: var(--fullwhitecolor);
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
     border-top: none;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 .portfolio-link:hover .portfolio-item {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 
     0px 1px 1px rgba(46, 47, 66, 0.16), 
     0px 2px 1px rgba(46, 47, 66, 0.08);
     border-top: none;
-    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 .portfolio-link:focus .portfolio-item {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 
     0px 1px 1px rgba(46, 47, 66, 0.16), 
     0px 2px 1px rgba(46, 47, 66, 0.08);
     border-top: none;
-    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 .portfolio-link:hover, .portfolio-link:focus {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 
     0px 1px 1px rgba(46, 47, 66, 0.16), 
     0px 2px 1px rgba(46, 47, 66, 0.08); 
-    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 .portfolio-link:hover .overlay{
     transform: translateY(0);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 .portfolio-link {
     text-decoration: none;
-    display: block;   
+    display: block;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;   
 }
 .portfolio-title {
     font-weight: 500;
@@ -573,7 +567,9 @@ footer .logo{
     width: 408px;
     height: 576px; 
     background: var(--modalbgc);
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 
+    0px 1px 3px rgba(0, 0, 0, 0.12), 
+    0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     animation: modal-x 2s linear 1;
 }
@@ -590,6 +586,12 @@ footer .logo{
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     cursor: pointer;
+}
+.modal-btn:hover, .modal-btn:focus {
+    border: none;
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 
+    0px 1px 1px rgba(46, 47, 66, 0.16), 
+    0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 @keyframes modal-x {
    0% {
