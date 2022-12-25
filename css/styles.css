@@ -326,6 +326,10 @@ transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 300ms linear;
+}
+.tsl-item:hover {
+    transform: scale(1.2);
 }
 .clients {
     padding: 120px 0px 120px 0px;
@@ -362,11 +366,13 @@ transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
     align-content: center;
     margin: 0 auto;
     fill: var(--bordercolor);
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    transform 350ms linear 0ms;
 }
 .customer-item-link:hover .customer-icon, 
 .customer-item-link:focus .customer-icon {
     fill: var(--buttonbasecolor);
+    transform: scale(1.18);
 }
 .customer-item-link:hover, 
 .customer-item-link:focus {
