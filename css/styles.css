@@ -565,11 +565,14 @@ img {
     opacity: 0;
     pointer-events: none;
 } 
+.backdrop.is-hidden .modal{
+    transform: translate(-50%, -50%) scale(0.8);
+}
 .modal {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1);
     width: 408px;
     height: 576px; 
     background: var(--modalbgc);
@@ -577,7 +580,7 @@ img {
     0px 1px 3px rgba(0, 0, 0, 0.12), 
     0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
-    animation: modal-x 2s linear 1;
+    transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-btn {
     position: absolute;
@@ -598,17 +601,4 @@ img {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 
     0px 1px 1px rgba(46, 47, 66, 0.16), 
     0px 2px 1px rgba(46, 47, 66, 0.08);
-}
-@keyframes modal-x {
-   0% {
-        opacity: 0;
-        transform: translate(100px, 100px);   
-   } 
-   50% {
-        opacity: 0.6;;
-   }
-    100% {
-        opacity: 1;
-        transform: translate(-50%, -50%);
-    }
 }
