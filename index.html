@@ -356,9 +356,11 @@
             <div class="subscribe-wrapper">
                 <p class="footer-title">Subscribe</p>
                 <form class="subscribe-group">
-                    <Input class="subscribe-input" type="email" name="user_email" placeholder="E-mail" />
+                    <label class="subscribe-label">
+                        <Input class="subscribe-input" type="email" name="user-email" placeholder="E-mail" />
+                    </label>
                     <button class="subscribe-button" type="submit">Subscribe
-                        <svg width="24" height="20" class="footer-subs-svg">
+                        <svg width="24" height="24" class="footer-subs-svg">
                                 <use href="./images/icons.svg#icon-send"></use>
                             </svg>
                     </button>
@@ -366,16 +368,16 @@
             </div>
         </div>
     </footer>
-
+<!----------------------- modal window  --------------------------->
     <div class="backdrop" data-modal>
         <div class="modal">
+            <p class="modal-title">Leave your contacts and we will call you back</p>
             <button class="modal-btn" type="button" data-modal-close>
-                <svg class="modal-icon" width="8" height="8">
+                <svg class="modal-icon-close" width="8" height="8">
                     <use href="./images/icons.svg#icon-close"></use>
                 </svg>
             </button>
-            <form class="registration-form" name="registration_form">
-                <p class="modal-title">Leave your contacts and we will call you back</p>
+            <form class="registration-form" name="registration-form">
                 <div class="form-field">
                     <label class="form-label" for="input-name">Name</label>
                     <div class="input-wrapper">
@@ -403,18 +405,18 @@
                         </svg>
                     </div>
                 </div>
-                <div class="form-field">
-                    <label class="form-label" for="input-comment">Comment</label>
-                    <textarea class="form-input-comment" name="input-comment" id="input-comment" placeholder="Enter text" minlength="20"
+                <div class="form-field-comment">
+                    <label class="form-label" for="user-comment">Comment</label>
+                    <textarea class="form-input-comment" name="user-comment" id="user-comment" placeholder="Enter text" minlength="20"
                         maxlength="2000"></textarea>
                 </div>
                 <div class="reg-form-agreement">
-                        <input class="reg-form-checkbox visually-hidden" type="checkbox" name="user-agreement" id="user-agreement"/>
-                        <label class="reg-form-label-check" for="user-agreement">
+                        <input class="reg-form-checkbox visually-hidden" type="checkbox" name="user-privacy" id="user-privacy"/>
+                        <label class="reg-form-label-check" for="user-privacy">
                         <span class="reg-form-span-check">
-                        <svg class="reg-form-check-svg" width="16" height="16">
-                            <use href="./images/icons.svg#icon-check"></use>
-                        </svg>
+                            <svg class="reg-form-check-svg" width="10" height="18">
+                                <use href="./images/icons.svg#icon-check"></use>
+                            </svg>
                         </span>
                         I accept the terms and conditions of the
                             <a class="reg-form-link" href="#" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
